@@ -19,30 +19,23 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        {/* Navbar */}
-        {/* <Navbar /> */}
-        {/* Sidebar */}
-        <Sidebar />
-        {/* ContentContainer */}
-        <ContentContainer>
-          <Grid.Container gap={2} justify="center">
-            <Grid xs={12} sm={4}>
-              <Card1 />
-            </Grid>
-            <Grid xs={12} sm={4}>
-              <Card2 />
-            </Grid>
-            <Grid xs={12} sm={4}>
-              <Card3 />
-            </Grid>
-            <Grid xs={12} sm={5}>
-              <Card4 />
-            </Grid>
-            <Grid xs={12} sm={7}>
-              <Card5 />
-            </Grid>
-          </Grid.Container>
-        </ContentContainer>
+        <Grid.Container gap={2} justify="center">
+          <Grid xs={12} sm={4}>
+            <Card1 />
+          </Grid>
+          <Grid xs={12} sm={4}>
+            <Card2 />
+          </Grid>
+          <Grid xs={12} sm={4}>
+            <Card3 />
+          </Grid>
+          <Grid xs={12} sm={5}>
+            <Card4 />
+          </Grid>
+          <Grid xs={12} sm={7}>
+            <Card5 />
+          </Grid>
+        </Grid.Container>
       </main>
     </div>
   );

@@ -5,7 +5,6 @@
   width: calc( 100% - 250px );
   height: calc(100% - 80px);
   position: fixed;
-  overflow: scroll;
   display: flex;
   flex-direction: column;
   justify-content: center;
