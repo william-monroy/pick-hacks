@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
