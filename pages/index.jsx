@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         {/* Navbar */}
-        <Navbar />
+        {/* <Navbar /> */}
         {/* Sidebar */}
         <Sidebar />
         {/* ContentContainer */}

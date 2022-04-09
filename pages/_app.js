@@ -8,11 +8,11 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
   return (
     <SessionProvider session={session}>
       <NextUIProvider>
-        <Container className="layout">
+        {/* <Container className="layout"> */}
           <Nav />
           <Component {...pageProps} />
           <Footer />
-        </Container>
+        {/* </Container> */}
       </NextUIProvider>
     </SessionProvider>
   );
