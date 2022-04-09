@@ -8,6 +8,7 @@ import "../styles/globals.css";
 import styles from "../styles/App.module.css";
 
 const App = ({ Component, pageProps: { session, ...pageProps } }) => {
+  
   return (
     <SessionProvider session={session}>
       <NextUIProvider>

@@ -1,0 +1,46 @@
+{
+  "health": [
+    {
+      "name": "diabetes"
+    },
+    {
+      "name": "overweight"
+    },
+    {
+      "name": "hypertension"
+    }
+  ],
+  "lifestyle": [
+    {
+      "name": "smoker"
+    },
+    {
+      "name": "alcoholic"
+    },
+    {
+      "name": "athlete"
+    }
+  ],
+  "disease": [
+    {
+      "name": "heart disease"
+    },
+    {
+      "name": "high blood pressure"
+    },
+    {
+      "name": "cancer"
+    }
+  ],
+  "medication": [
+    {
+      "name": "aspirin"
+    },
+    {
+      "name": "ibuprofen"
+    },
+    {
+      "name": "antibiotics"
+    }
+  ]
+}
