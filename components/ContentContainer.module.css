@@ -1,6 +1,6 @@
 .ContentContainer {
   /* background-color: aquamarine; */
-  margin-top: 80px;
+  margin-top: 200px;
   margin-left: 250px;
   width: calc( 100% - 250px );
   height: calc(100% - 80px);
@@ -9,5 +9,4 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
 }
