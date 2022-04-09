@@ -1,0 +1,55 @@
+.Navbar {
+  background: hsla(0,0%,100%,0.8);
+  width: 100%;
+  height: 80px;
+  backdrop-filter: saturate(180%) blur(10px);
+  box-shadow: rgb(2 1 1 / 10%) 0px 5px 20px -5px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.Navbar__logo {
+  /* background-color: violet; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Logo__name {
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  margin: 5px;
+  font-weight: 700;
+  color: black;
+  padding: 0;
+}
+
+.Navbar__right {
+  /* background-color: tomato; */
+}
+
+.Navbar__profile{
+  /* background-color: burlywood; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Navbar__profile__img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.Navbar__profile__name {
+  font-size: 1rem;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
