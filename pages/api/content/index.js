@@ -6,7 +6,7 @@ const handleContent = async (req, res) => {
   try {
     if (req.method === "GET") {
       const content = await db.fetch();
-      res.status(200).json(content);
+      res.status(200).json(content.items);
     } else if (req.method === "POST") {
       const { title, url, tags } = req.body;
       const content = await db.put({

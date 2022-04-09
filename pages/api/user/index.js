@@ -13,7 +13,7 @@ const handleUser = async (req, res) => {
       if (req.method === "GET") {
         const content = await db.fetch({ email: email });
 
-        res.status(200).json(content);
+        res.status(200).json(content.items[0]);
       } else if (req.method === "POST") {
         let content;
         const { name, tags } = req.body;
@@ -33,7 +33,7 @@ const handleUser = async (req, res) => {
         } else {
           content = await db.put(user);
         }
-        res.status(201).json(content);
+        res.status(201).json(content.items[0]);
       }
     } else {
       res.status(401).json({ error: "Unauthorized" });
