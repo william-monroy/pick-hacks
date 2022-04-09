@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@magic-sdk/admin": "^1.4.0",
+    "deta": "^1.1.0",
     "magic-sdk": "^8.1.0",
     "next": "12.1.4",
     "next-auth": "^4.3.1",

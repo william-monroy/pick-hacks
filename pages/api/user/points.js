@@ -1,0 +1,41 @@
+import { Deta } from "deta";
+
+const db = Deta(process.env.DETA_KEY).Base(process.env.DETA_POINTS);
+
+const handlePoints = async (req, res) => {
+  try {
+    const {
+      user: { email },
+    } = getSession(req, res);
+
+    if (email) {
+      if (req.method === "GET") {
+        const content = await db.fetch({ email: email });
+        res.status(200).json(content.items[0]);
+      } else if (req.method === "POST") {
+        const { points } = req.body;
+
+        const query = await db.fetch({ email: email });
+
+        const exits = query.count > 0;
+
+        if (exits) {
+          const content = await db.update(
+            { points: query.points + points },
+            query.items[0].key
+          );
+          res.status(201).json(content);
+        } else {
+          const content = await db.put({ email: email, points: points });
+          res.status(201).json(content);
+        }
+      }
+    } else {
+      res.status(401).json({ error: "Unauthorized" });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+export default handlePoints;
