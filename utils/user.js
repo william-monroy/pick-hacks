@@ -1,6 +1,12 @@
 const getProfile = async () => {
   const req = await fetch(`/api/user`);
-  const res = await req.json();
+  let res;
+
+  try {
+    res = await req.json();
+  } catch {
+    res = null;
+  }
 
   return res;
 };

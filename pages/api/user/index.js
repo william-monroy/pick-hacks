@@ -7,7 +7,7 @@ const handleUser = async (req, res) => {
   try {
     const {
       user: { email },
-    } = getSession(req, res);
+    } = await getSession({ req });
 
     if (email) {
       if (req.method === "GET") {
