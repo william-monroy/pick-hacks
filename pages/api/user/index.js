@@ -16,10 +16,11 @@ const handleUser = async (req, res) => {
         res.status(200).json(content.items[0]);
       } else if (req.method === "POST") {
         let content;
-        const { name, tags } = req.body;
+        const { name, age, tags } = req.body;
 
         const user = {
           name,
+          age,
           email,
           tags,
         };

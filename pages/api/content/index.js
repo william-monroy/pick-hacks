@@ -8,11 +8,13 @@ const handleContent = async (req, res) => {
       const content = await db.fetch();
       res.status(200).json(content.items);
     } else if (req.method === "POST") {
-      const { title, url, tags } = req.body;
+      const { title, url, tags, description, image } = req.body;
       const content = await db.put({
         title,
         url,
         tags,
+        description,
+        image,
       });
       res.status(201).json(content);
     }

@@ -5,13 +5,13 @@ const getContent = async () => {
   return res;
 };
 
-const addContent = async (title, url, tags) => {
+const addContent = async (title, url, image, description, tags) => {
   const req = await fetch(`/api/content`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ title, url, tags }),
+    body: JSON.stringify({ title, url, image, description, tags }),
   });
   const res = await req.json();
 

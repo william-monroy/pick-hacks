@@ -11,13 +11,13 @@ const getProfile = async () => {
   return res;
 };
 
-const updateProfile = async (name, tags) => {
+const updateProfile = async (name, age, tags) => {
   const req = await fetch(`/api/user`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name, tags }),
+    body: JSON.stringify({ name, tags, age }),
   });
   const res = await req.json();
 
