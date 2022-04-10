@@ -22,6 +22,8 @@ const Auth = () => {
       didToken,
       callbackUrl: router.query["callbackUrl"],
     });
+    
+    router.push("/");
   };
 
   return (

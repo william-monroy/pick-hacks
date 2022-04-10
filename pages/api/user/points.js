@@ -1,4 +1,5 @@
 import { Deta } from "deta";
+import { getSession } from "next-auth/react";
 
 const db = Deta(process.env.DETA_KEY).Base(process.env.DETA_POINTS);
 
@@ -21,7 +22,7 @@ const handlePoints = async (req, res) => {
 
         if (exits) {
           const content = await db.update(
-            { points: query.points + points },
+            { points: parseInt(query.items[0].points) + parseInt(points) },
             query.items[0].key
           );
           res.status(201).json(content);

@@ -1,19 +1,19 @@
 import { Card, Col, Text } from "@nextui-org/react";
 
-export const Card1 = () => (
-  <Card cover>
+export const Card1 = ({ data, onClick, css }) => (
+  <Card cover css={css} onClick={() => onClick()}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
         <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-          What to watch
+          {data.tags}
         </Text>
         <Text h4 color="white">
-          Stream the Acme event
+          {data.title}
         </Text>
       </Col>
     </Card.Header>
     <Card.Image
-      src="https://nextui.org/images/card-example-4.jpeg"
+      src={data.image}
       height={340}
       width="100%"
       alt="Card image background"

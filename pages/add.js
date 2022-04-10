@@ -1,46 +1,58 @@
+import { Widget } from "@uploadcare/react-widget";
 import { useForm } from "react-hook-form";
 import { Button, Input, Text, Textarea } from "@nextui-org/react";
 import styles from "../styles/Quiz.module.css";
 import { addContent } from "../utils/content";
+import { useState } from "react";
+import { AddPoints } from "../utils/points";
+import { useRouter } from "next/router";
 
 const Add = () => {
+  const router = useRouter();
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = async ({ title }) => {
-    addContent()
+  const [image, setImage] = useState(null);
+
+  const onSubmit = async ({ title, url, description, tag }) => {
+    addContent(title, url, image, description, "diabetes");
+    AddPoints(200);
+    router.push("/home");
   };
 
   return (
     <section className={styles.container}>
-      <Text h1>Add </Text>
-      <Text h4>We need basic information about you.</Text>
+      <Text h1>Add new content</Text>
+      <Text h4>Win 200 points by adding content to the platform.</Text>
+
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <Widget
+          publicKey="624de14caf2cf3c7f75c"
+          onChange={(e) => setImage(e.cdnUrl)}
+        />
+
         <Input
           label="Title"
           type="text"
           size="xl"
           width="300px"
-          {...register("name", { required: true })}
-          placeholder="John Doe"
+          {...register("title", { required: true })}
+          placeholder="Exercises for beginners"
         />
-
         <Input
-          label="Your age"
-          type="number"
+          label="Youtube URL"
+          type="url"
           size="xl"
           width="300px"
-          {...register("email", { required: true })}
-          placeholder="18"
+          {...register("url", { required: true })}
+          placeholder="https://www.youtube.c..."
         />
-
         <Textarea
           size="xl"
           width="300px"
-          label="Tell us about your goals"
-          placeholder="I have diabetes and I want to lose weight"
-          {...register("goals", { required: true })}
+          label="Description"
+          placeholder="Start like a pro"
+          {...register("description", { required: true })}
         />
-
         <Button
           type="submit"
           size="lg"

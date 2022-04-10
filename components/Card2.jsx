@@ -1,19 +1,19 @@
 import { Card, Col, Text } from "@nextui-org/react";
 
-export const Card2 = () => (
-  <Card width="100%" cover>
+export const Card2 = ({ data, css, onClick }) => (
+  <Card width="100%" cover css={css} onClick={onClick}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
         <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-          Plant a tree
+          {data.tags}
         </Text>
         <Text h4 color="white">
-          Contribute to the planet
+          {data.title}
         </Text>
       </Col>
     </Card.Header>
     <Card.Image
-      src="https://nextui.org/images/card-example-3.jpeg"
+      src={data.image}
       height={340}
       width="100%"
       alt="Card image background"
