@@ -25,10 +25,10 @@ const handlePoints = async (req, res) => {
             { points: parseInt(query.items[0].points) + parseInt(points) },
             query.items[0].key
           );
-          res.status(201).json(content);
+          res.status(201).json({ message: "Points updated" });
         } else {
           const content = await db.put({ email: email, points: points });
-          res.status(201).json(content);
+          res.status(201).json({ message: "Points added" });
         }
       }
     } else {

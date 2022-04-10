@@ -12,17 +12,14 @@ const Nav = () => {
   const router = useRouter();
 
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ name:false});
   const [points, setPoints] = useState(0);
 
-  useEffect(
-    () => async () => {
-      setUser(await getProfile());
-      setPoints(await getPoints());
-      setIsLoading(false);
-    },
-    []
-  );
+  useEffect(() => async () => {
+    setUser(await getProfile());
+    setPoints(await getPoints());
+    setIsLoading(false);
+  }, []);
 
   return (
     <header className={styles.nav}>
@@ -44,16 +41,38 @@ const Nav = () => {
           justifyContent: "space-evenly",
         }}
       >
-        {status === "loading" && (
+        {status === "authenticated" && (
           <>
-            <LinkComp href="/add" passHref>
-              <Link>Add new content</Link>
+            <LinkComp href="/blog" passHref>
+              <Link
+                css={{
+                  margin: "16px",
+                }}
+              >
+                Our community
+              </Link>
             </LinkComp>
-            {!isLoading && (
-              <Text margin="16px">
-                {user != {} ? `${user.name} - ${points} points` : "Not user"}
-              </Text>
-            )}
+            <LinkComp href="/add" passHref>
+              <Link
+                css={{
+                  margin: "16px",
+                }}
+              >
+                Add new content
+              </Link>
+            </LinkComp>
+            <LinkComp href="/home" passHref>
+              <Link
+                css={{
+                  margin: "16px",
+                }}
+              >
+                Our content
+              </Link>
+            </LinkComp>
+            <Text margin="16px">
+              {user.name ? `${user.name} - ${points} points` : "Not user"}
+            </Text>
           </>
         )}
         <Button
