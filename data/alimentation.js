@@ -118,7 +118,7 @@ const alimentation = [
       from: 19,
       to: 40,
     },
-    for: ["woman", "pregnant"],
+    for: ["pregnant"],
     tag: "adult",
     info: [
       "Pregnant women need extra protein, zinc, vitamin A, vitamin C and iron.",
