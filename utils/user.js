@@ -4,8 +4,9 @@ const getProfile = async () => {
 
   try {
     res = await req.json();
-  } catch {
+  } catch(e) {
     res = null;
+    console.log(e)
   }
 
   return res;

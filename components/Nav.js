@@ -71,7 +71,7 @@ const Nav = () => {
               </Link>
             </LinkComp>
             <Text margin="16px">
-              {user.name ? `${user.name} - ${points} points` : "Not user"}
+              {user?.name ? `${user.name} - ${points} points` : "Not user"}
             </Text>
           </>
         )}
