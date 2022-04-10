@@ -67,18 +67,9 @@ const Home = () => {
                   : router.push("/home");
               }}
             >
-              {!status == "authenticated"
-                ? "Log In"
-                : !user.name
-                ? "Complete your profile"
-                : "Go to the dashboard"}
+              Start now
             </Button>
           )}
-        </Grid>
-        <Grid>
-          <Button color="success" size="xl">
-            Learn more
-          </Button>
         </Grid>
       </Grid.Container>
     </section>

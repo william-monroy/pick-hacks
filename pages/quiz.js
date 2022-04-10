@@ -3,13 +3,17 @@ import { useForm } from "react-hook-form";
 import { Button, Input, Text, Textarea } from "@nextui-org/react";
 import styles from "../styles/Quiz.module.css";
 import { updateProfile } from "../utils/user";
+import { AddPoints } from "../utils/points";
 
 const Quiz = () => {
   const router = useRouter();
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = async ({ name, age, goals }) => {
-    updateProfile(name, age, goals);
+  const onSubmit = async ({ name, age }) => {
+    let data = ["diabetes"];
+    updateProfile(name, age, data);
+    AddPoints(100);
+    router.push("/home");
   };
 
   return (
